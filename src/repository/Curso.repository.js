@@ -1,37 +1,34 @@
-import db from "../config/database.js";
+import db from "../Config/Database.js"
 
-db.run(`
+db.run (`
     CREATE TABLE IF NOT EXISTS Curso(
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nome  TEXT  NOT NULL UNIQUE,
+        id  INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL UNIQUE, 
         area TEXT NOT NULL,
-        nivel  TEXT  NOT NULL,
-        modalidade  TEXT  NOT NULL
+        nivel TEXT NOT NULL,
+        modalidade TEXT NOT NULL
     )
-`);
+    
+`)
 
-function createCursoRepository(novoCurso) {
-    return new Promise((resolve, reject) => {
-        const {
-            nome, area, nivel, modalidade
+function creatCursorepositories (novoCurso){
+    return new Promise ((response, reject) => {
+        const {nome, area, nivel, modalidade} = novoCurso
 
-        } = novoCurso;
-
-        db.run(
-            `INSERT INTO Curso(nome, area, nivel, modalidade)
-            VALUES(?,?,?,?)`,
-            [nome, area, nivel, modalidade],
-            (error) => {
-                if (error) {
-                    reject(error);
+        db.run (
+            `INSERT INTOR Curso (nome, area, nivel, modalidade)
+            VALUES (?,?,?,?)`, [nome, area, nivel, modalidade],
+            (erro) => {
+                if (erro){
+                    rej (erro)
                 } else {
-                    resolve(novoCurso);
+                    res (novoCurso)
                 }
             }
         )
-    });
+    })
 }
 
 export default {
-    createCursoRepository
+    creatCursorepositories      
 }

@@ -1,15 +1,16 @@
-import cursoRepository from "../repository/Curso.repository.js";
+import Cursoservice from "../services/Curso.service.js"
 
-async function createCursoService(novoCurso) {
-    const cursoSalvo = await cursoRepository.createCursoRepository(novoCurso);
+async function createCursoservice (novoCurso){
+    const Cursosalvo = await CursoRepositories.creatCursorepositories
 
-    if (!cursoSalvo) {
-        throw new Error("Erro ao criar novo curso!");
+    if (!Cursosalvo) {
+        throw new Error("Erro ao Criar novo Curso: ");
+        
     }
 
-    return cursoRepository;
+    return CursoRepositories
 }
 
 export default {
-    createCursoService
+    createCursoservice
 }

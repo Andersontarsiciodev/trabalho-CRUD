@@ -1,0 +1,9 @@
+# Dependências (o npm install recria essa pasta)
+node_modules/
+
+# Banco de dados local
+*.db
+*.sqlite
+
+# Variáveis de ambiente
+.env

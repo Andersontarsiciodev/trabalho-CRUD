@@ -1,13 +1,16 @@
 import sqlite3 from "sqlite3";
 
-const db = new sqlite3.Database('database.sqlite',
-    (error) => {
-        if (error) {
-            console.error("Erro ao conectar com o banco de dados: ", error.message);
-        } else {
-            console.log("Conectado ao banco de dados com sucesso.")
-        }
+const db = new sqlite3.Database("database.sqlite", (erro) => {
+  if (erro) {
+    console.error("Erro ao abrir o banco: ", erro.message);
+  }
+
+  else {
+  console.log("Conectado ao banco de dados com sucesso. ")
     }
+  }
 );
+
+db.serialize();
 
 export default db;
